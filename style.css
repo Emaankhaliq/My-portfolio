@@ -246,6 +246,23 @@ body {
   padding: 30px;
 }
 
+/* About Section Custom Typography */
+#about .glass-card {
+  padding: 35px !important;
+}
+
+#about .glass-card p {
+  font-size: 15.5px !important;
+  line-height: 1.85 !important;
+  color: #b8ccc4 !important;
+  font-weight: 400 !important;
+  margin-bottom: 16px;
+}
+
+#about .glass-card p:last-child {
+  margin-bottom: 0 !important;
+}
+
 /* Horizontal Scrollable / Draggable Skills Carousel with Side Arrows */
 #skills {
   overflow: hidden;
@@ -461,7 +478,7 @@ body {
   }
 
   .nav-links {
-    display: flex; /* Mobile par links wapas show karne ke liye */
+    display: flex;
     gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
