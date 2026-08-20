@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eman Khaliq | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- EmailJS Script -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("3EA-DXYyeSn4PM6r6");
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn-primary nav-btn">Start a Project</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="badge"><i class="fa-solid fa-sparkles"></i> WELCOME TO MY PORTFOLIO</div>
+      <h1>Hi, I'm <span class="highlight">Eman Khaliq</span></h1>
+      <p class="hero-subtitle">Software Engineer / Full Stack Developer</p>
+      <p class="hero-desc">
+        Passionate Software Engineer with expertise in building responsive web applications and crafting intuitive user experiences. I combine technical expertise in AI + Web Development to deliver products that users love.
+      </p>
+      
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="Eman_Khaliq_FullStack_CV (1).pdf" download="Eman_Khaliq_CV.pdf" class="btn-outline">Download Resume <i class="fa-solid fa-download"></i></a>
+      </div>
+
+      <!-- Connected Social Links -->
+      <div class="connect-socials">
+        <span>CONNECT</span>
+        <a href="https://github.com/Emaankhaliq" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/emankhaliq" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:emanabdulkhaliq52@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <!-- Profile Image Section -->
+    <div class="hero-image-wrapper">
+      <div class="image-circle">
+        <img src="my-photo.png" alt="Eman Khaliq" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+      </div>
+      <div class="experience-card">
+        <span class="exp-num">BS</span>
+        <span class="exp-text">Software<br>Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <div class="glass-card">
+      <p>I’m always looking for better ways to solve problems, build things, and improve how people interact with technology. That mindset is what led me to development.</p>
+      <p style="margin-top: 15px;">As I started working with code, I found that I enjoyed turning ideas into functional products and figuring out how to make them work better. Every project gave me a new challenge to solve and a reason to learn something new.</p>
+      <p style="margin-top: 15px;">Today, I see development as a combination of problem-solving, creativity, and continuous learning. I’m focused on building practical, user-friendly solutions and growing with every project I take on.</p>
+      <p style="margin-top: 15px;">I’m open to <strong>collaboration, innovative projects, and opportunities where I can learn, contribute, and create something worth remembering.</strong></p>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills" class="section">
+    <div class="skills-header-flex">
+      <h2 class="section-title" style="margin-bottom: 0;">Technical Skills</h2>
+    </div>
+
+    <div class="skills-outer-container">
+      <button id="slideLeft" class="side-arrow-btn left-arrow" aria-label="Scroll Left"><i class="fa-solid fa-chevron-left"></i></button>
+      
+      <div class="skills-carousel-wrapper" id="skillsWrapper">
+        <div class="skills-track" id="skillsTrack">
+          <!-- Languages -->
+          <div class="skill-card"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+          <div class="skill-card"><i class="fa-brands fa-python"></i><span>Python</span></div>
+          <div class="skill-card"><i class="fa-solid fa-code"></i><span>C++</span></div>
+          
+          <!-- Frontend -->
+          <div class="skill-card"><i class="fa-brands fa-react"></i><span>React & Next.js</span></div>
+          <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><span>Tailwind CSS</span></div>
+          <div class="skill-card"><i class="fa-brands fa-html5"></i><span>HTML5 / CSS3</span></div>
+          <div class="skill-card"><i class="fa-solid fa-mobile-screen"></i><span>Responsive Design</span></div>
+
+          <!-- Backend -->
+          <div class="skill-card"><i class="fa-solid fa-bolt"></i><span>FastAPI</span></div>
+          <div class="skill-card"><i class="fa-solid fa-network-wired"></i><span>REST API Design</span></div>
+          <div class="skill-card"><i class="fa-solid fa-database"></i><span>SQLAlchemy ORM</span></div>
+          <div class="skill-card"><i class="fa-solid fa-key"></i><span>JWT Authentication</span></div>
+
+          <!-- Databases -->
+          <div class="skill-card"><i class="fa-solid fa-server"></i><span>PostgreSQL</span></div>
+          <div class="skill-card"><i class="fa-solid fa-brain"></i><span>ChromaDB (Vector DB)</span></div>
+          <div class="skill-card"><i class="fa-solid fa-sitemap"></i><span>Data Modeling</span></div>
+
+          <!-- Tools -->
+          <div class="skill-card"><i class="fa-brands fa-git-alt"></i><span>Git / GitHub</span></div>
+          <div class="skill-card"><i class="fa-solid fa-paper-plane"></i><span>Postman</span></div>
+        </div>
+      </div>
+
+      <button id="slideRight" class="side-arrow-btn right-arrow" aria-label="Scroll Right"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      
+      <!-- Project 1: CareerCure -->
+      <div class="project-card">
+        <h3>CareerCure — AI Career Counseling</h3>
+        <p>An intelligent web platform designed to provide personalized career recommendations using AI technology.</p>
+        <div class="tech-tags">
+          <span>React</span> <span>FastAPI</span> <span>ChromaDB</span>
+        </div>
+        <a href="https://github.com/Emaankhaliq/final-year-project" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <!-- Project 2: TaskFlow -->
+      <div class="project-card">
+        <h3>TaskFlow — Full-Stack Task Manager</h3>
+        <p>A secure task management web app featuring user authentication, CRUD operations, and personalized task tracking.</p>
+        <div class="tech-tags">
+          <span>FastAPI</span> <span>Next.js</span> <span>Tailwind</span>
+        </div>
+        <a href="https://github.com/Emaankhaliq/taskflow" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <!-- Project 3: AI Resume Assistant -->
+      <div class="project-card">
+        <h3>Career AI Resume Assistant</h3>
+        <p>AI-powered resume and career assistant with ATS analysis, job matching, skills gap analysis, and career roadmap.</p>
+        <div class="tech-tags">
+          <span>Python</span> <span>AI/LLM</span> <span>HTML/CSS</span>
+        </div>
+        <a href="https://github.com/Emaankhaliq/career-ai-resume-assistant" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <!-- Project 4: Inventory Management System -->
+      <div class="project-card">
+        <h3>Inventory Management System</h3>
+        <p>A C++ desktop application built with persistent file storage and optimized data structures for inventory tracking.</p>
+        <div class="tech-tags">
+          <span>C++</span> <span>OOP</span> <span>File Handling</span>
+        </div>
+        <a href="https://github.com/Emaankhaliq/inventory-management-system" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <!-- Project 5: Smart Pill Manager -->
+      <div class="project-card">
+        <h3>Smart Pill Manager</h3>
+        <p>An IoT-based automated pill dispenser system paired with a mobile app for automated dosage tracking.</p>
+        <div class="tech-tags">
+          <span>IoT</span> <span>Arduino</span> <span>Android</span>
+        </div>
+        <a href="https://github.com/Emaankhaliq/smart-pill-manager" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <!-- Project 6: Foodpanda Application -->
+      <div class="project-card">
+        <h3>Foodpanda Application</h3>
+        <p>A console-based food ordering system managing restaurant listings, order processing, and file-based history.</p>
+        <div class="tech-tags">
+          <span>C++</span> <span>Logic Building</span> <span>File Handling</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i> 
+          <a href="mailto:emanabdulkhaliq52@gmail.com" style="color: #ffffff; text-decoration: none;">emanabdulkhaliq52@gmail.com</a>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i> 
+          <a href="tel:+923471140455" style="color: #ffffff; text-decoration: none;">+92 3471140455</a>
+        </div>
+      </div>
+
+      <!-- Working Contact Form -->
+      <form id="contact-form" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit" id="submit-btn" class="btn-primary">Send Message</button>
+        <p id="form-status" style="margin-top: 12px; font-weight: 500; display: none;"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Mouse Drag, Touch Scroll & Arrow Buttons Script -->
+  <script>
+    const slider = document.getElementById('skillsWrapper');
+    const leftBtn = document.getElementById('slideLeft');
+    const rightBtn = document.getElementById('slideRight');
+
+    // Arrow Button Functionality
+    leftBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    rightBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+
+    // Mouse Drag Functionality
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2; 
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+
+  <!-- Form Submission Handler -->
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const btn = document.getElementById('submit-btn');
+      const status = document.getElementById('form-status');
+      
+      btn.innerText = 'Sending...';
+
+      emailjs.sendForm('service_uhb5mlp', 'template_ufdsfsj', this)
+        .then(() => {
+          btn.innerText = 'Send Message';
+          status.style.display = 'block';
+          status.style.color = '#4ade80';
+          status.innerText = 'Message Sent Successfully!';
+          this.reset();
+          
+          setTimeout(() => {
+            status.style.display = 'none';
+          }, 4000);
+        }, (error) => {
+          btn.innerText = 'Send Message';
+          status.style.display = 'block';
+          status.style.color = '#f87171';
+          status.innerText = 'Failed to send message. Please try again.';
+          console.error('EmailJS Error:', error);
+        });
+    });
+  </script>
+
+</body>
+</html>
