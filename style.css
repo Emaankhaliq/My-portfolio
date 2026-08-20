@@ -58,6 +58,12 @@ body {
   color: #6ee7b7;
 }
 
+/* Navbar Button Fix */
+.nav-btn {
+  width: auto !important;
+  flex: none !important;
+}
+
 /* Buttons */
 .btn-primary {
   background-color: #6ee7b7;
@@ -448,15 +454,19 @@ body {
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row; /* Mobile par navbar elements aik line mein balanced rahein */
+    align-items: center;
+    gap: 10px;
     padding: 20px 0;
   }
 
   .nav-links {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: none; /* Choti screens par links ko clean rakhne ke liye hide kiya hai */
+  }
+
+  .nav-btn {
+    padding: 8px 16px !important;
+    font-size: 12px !important;
   }
 
   .hero-content h1 {
@@ -473,7 +483,6 @@ body {
     height: 210px;
   }
 
-  /* Mobile par side arrows chuptay hain taake touch scroll/drag smoothly kaam kare */
   .side-arrow-btn {
     display: none;
   }
