@@ -454,14 +454,21 @@ body {
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: row; /* Mobile par navbar elements aik line mein balanced rahein */
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     padding: 20px 0;
   }
 
   .nav-links {
-    display: none; /* Choti screens par links ko clean rakhne ke liye hide kiya hai */
+    display: flex; /* Mobile par links wapas show karne ke liye */
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 13px;
   }
 
   .nav-btn {
