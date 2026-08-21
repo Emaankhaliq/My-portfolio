@@ -293,7 +293,6 @@
           particles[i].update();
           particles[i].draw();
 
-          // Connect particles
           for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
@@ -308,7 +307,6 @@
             }
           }
 
-          // Connect to mouse
           if (mouse.x !== null && mouse.y !== null) {
             const mdx = particles[i].x - mouse.x;
             const mdy = particles[i].y - mouse.y;
@@ -469,20 +467,12 @@
       });
     }
 
-    // 8. Sticky Navbar & Active Link Highlight
-    const navbar = document.querySelector('.navbar');
+    // 8. Navbar Active Link Highlight (Clean without background class)
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".nav-links a");
 
     window.addEventListener("scroll", () => {
       let scrollY = window.pageYOffset;
-
-      if (scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-
       sections.forEach((section) => {
         const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - 120;
@@ -499,14 +489,17 @@
       });
     });
 
-    // 9. Skills Continuous Auto-Marquee
+    // 9. Fully Swipeable & Draggable Skills Carousel
     const slider = document.getElementById('skillsWrapper');
     const leftBtn = document.getElementById('slideLeft');
     const rightBtn = document.getElementById('slideRight');
-    let isHoveringSkills = false;
+    let isInteracting = false;
+    let isDown = false;
+    let startX, scrollLeftVal;
 
+    // Auto-scroll loop that pauses on interaction
     function autoScrollSkills() {
-      if (!isHoveringSkills && slider) {
+      if (!isInteracting && slider) {
         slider.scrollLeft += 0.8;
         if (slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth - 2)) {
           slider.scrollLeft = 0;
@@ -516,10 +509,65 @@
     }
     requestAnimationFrame(autoScrollSkills);
 
-    slider.addEventListener('mouseenter', () => { isHoveringSkills = true; });
-    slider.addEventListener('mouseleave', () => { isHoveringSkills = false; });
-    leftBtn.addEventListener('click', () => slider.scrollBy({ left: -300, behavior: 'smooth' }));
-    rightBtn.addEventListener('click', () => slider.scrollBy({ left: 300, behavior: 'smooth' }));
+    slider.addEventListener('mouseenter', () => { isInteracting = true; });
+    slider.addEventListener('mouseleave', () => { 
+      if (!isDown) isInteracting = false; 
+    });
+
+    // Mouse Drag
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      isInteracting = true;
+      slider.classList.add('active-drag');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeftVal = slider.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (isDown) {
+        isDown = false;
+        slider.classList.remove('active-drag');
+        setTimeout(() => { isInteracting = false; }, 2000);
+      }
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      slider.scrollLeft = scrollLeftVal - walk;
+    });
+
+    // Touch Swipe for Mobile / Tablet
+    slider.addEventListener('touchstart', (e) => {
+      isInteracting = true;
+      startX = e.touches[0].pageX - slider.offsetLeft;
+      scrollLeftVal = slider.scrollLeft;
+    }, { passive: true });
+
+    slider.addEventListener('touchmove', (e) => {
+      const x = e.touches[0].pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.2;
+      slider.scrollLeft = scrollLeftVal - walk;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', () => {
+      setTimeout(() => { isInteracting = false; }, 2000);
+    });
+
+    // Arrow Controls
+    leftBtn.addEventListener('click', () => {
+      isInteracting = true;
+      slider.scrollBy({ left: -260, behavior: 'smooth' });
+      setTimeout(() => { isInteracting = false; }, 2000);
+    });
+
+    rightBtn.addEventListener('click', () => {
+      isInteracting = true;
+      slider.scrollBy({ left: 260, behavior: 'smooth' });
+      setTimeout(() => { isInteracting = false; }, 2000);
+    });
 
     // 10. Working EmailJS Contact Form
     document.getElementById('contact-form').addEventListener('submit', function(event) {

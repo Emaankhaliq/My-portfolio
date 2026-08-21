@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #060a0b;
 }
 
 body {
@@ -22,7 +23,7 @@ body {
   position: relative;
 }
 
-/* Background Particle Canvas (Always Visible on Top of Gradient) */
+/* Background Particle Canvas */
 #particle-canvas {
   position: fixed;
   top: 0;
@@ -122,7 +123,7 @@ body::after {
   border-radius: 16px;
 }
 
-/* ================= NAVBAR (Fixed: No solid black strip) ================= */
+/* ================= NAVBAR (PERMANENT TRANSPARENT) ================= */
 
 .navbar {
   display: flex;
@@ -132,18 +133,9 @@ body::after {
   position: relative;
   z-index: 50;
   width: 100%;
-  transition: all 0.35s ease;
-}
-
-.navbar.scrolled {
-  position: sticky;
-  top: 0;
-  background: rgba(6, 10, 11, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .logo {
@@ -288,7 +280,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px 0 60px 0;
+  padding: 40px 0 60px 0;
   min-height: 75vh;
   position: relative;
   z-index: 5;
@@ -605,7 +597,7 @@ body::after {
   font-variant-numeric: tabular-nums;
 }
 
-/* ================= SKILLS ================= */
+/* ================= SKILLS (SWIPEABLE & SMOOTH DRAG) ================= */
 
 #skills {
   overflow: hidden;
@@ -656,26 +648,28 @@ body::after {
 .skills-carousel-wrapper {
   width: 100%;
   overflow-x: auto;
-  scroll-behavior: smooth;
   padding: 10px 0 20px 0;
   cursor: grab;
   scrollbar-width: none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  user-select: none;
+}
+
+.skills-carousel-wrapper.active-drag {
+  cursor: grabbing;
 }
 
 .skills-carousel-wrapper::-webkit-scrollbar {
   display: none;
 }
 
-.skills-carousel-wrapper:active {
-  cursor: grabbing;
-}
-
 .skills-track {
   display: flex !important;
   gap: 15px !important;
   width: max-content !important;
+  pointer-events: auto;
 }
 
 .skill-card {
@@ -986,7 +980,6 @@ body::after {
 }
 
 @media (max-width: 768px) {
-  /* iOS Safari background-attachment bug fix */
   body {
     background-attachment: scroll !important;
   }
@@ -996,15 +989,6 @@ body::after {
     align-items: center;
     gap: 12px;
     padding: 20px 0;
-  }
-
-  .navbar.scrolled {
-    position: relative !important;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    box-shadow: none !important;
-    border-bottom: none !important;
   }
 
   .nav-links {
