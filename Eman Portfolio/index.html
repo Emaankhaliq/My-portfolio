@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Eman Khaliq | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- EmailJS Script -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("3EA-DXYyeSn4PM6r6");
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Background Animated Particle Canvas (Always Active) -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn-primary nav-btn">Collab with me</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="badge"><i class="fa-solid fa-sparkles"></i> WELCOME TO MY PORTFOLIO</div>
+      <h1>Hi, I'm <span class="highlight">Eman Khaliq</span></h1>
+      <p class="hero-subtitle">I build <span id="typing-text" class="highlight"></span><span class="cursor-blink">|</span></p>
+      <p class="hero-desc">
+        Passionate Software Engineer with expertise in building responsive web applications and crafting intuitive user experiences. I combine technical expertise in AI + Web Development to deliver products that users love.
+      </p>
+      
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="Eman_Khaliq_fs_CV (1).pdf" download="Eman_Khaliq_CV.pdf" class="btn-outline">Download Resume <i class="fa-solid fa-download"></i></a>
+      </div>
+
+      <!-- Connected Social Links -->
+      <div class="connect-socials">
+        <span>CONNECT</span>
+        <a href="https://github.com/Emaankhaliq" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/emankhaliq" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:emanabdulkhaliq52@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <!-- Profile Image Section with Magnetic Float -->
+    <div class="hero-image-wrapper" id="heroImageWrapper">
+      <div class="image-circle" id="imageCircle">
+        <img src="my-photo.png" alt="Eman Khaliq" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+      </div>
+      <div class="experience-card" id="expCard">
+        <span class="exp-num">BS</span>
+        <span class="exp-text">Software<br>Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section reveal">
+    <h2 class="section-title">About Me</h2>
+    <div class="glass-card">
+      <p>I’m always looking for better ways to solve problems, build things, and improve how people interact with technology. That mindset is what led me to development.</p>
+      <p style="margin-top: 15px;">As I started working with code, I found that I enjoyed turning ideas into functional products and figuring out how to make them work better. Every project gave me a new challenge to solve and a reason to learn something new.</p>
+      <p style="margin-top: 15px;">Today, I see development as a combination of problem-solving, creativity, and continuous learning. I’m focused on building practical, user-friendly solutions and growing with every project I take on.</p>
+      <p style="margin-top: 15px;">I’m open to <strong>collaboration, innovative projects, and opportunities where I can learn, contribute, and create something worth remembering.</strong></p>
+
+      <!-- Dynamic Counters Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 25px;">
+        <div style="text-align: center;">
+          <h3 style="font-size: 32px; color: #6ee7b7; font-weight: 700;"><span class="stat-counter" data-target="6">0</span>+</h3>
+          <p style="font-size: 13px; color: #8fa8a0; margin-top: 4px;">Featured Projects</p>
+        </div>
+        <div style="text-align: center;">
+          <h3 style="font-size: 32px; color: #6ee7b7; font-weight: 700;"><span class="stat-counter" data-target="15">0</span>+</h3>
+          <p style="font-size: 13px; color: #8fa8a0; margin-top: 4px;">Tech Skills</p>
+        </div>
+        <div style="text-align: center;">
+          <h3 style="font-size: 32px; color: #6ee7b7; font-weight: 700;"><span class="stat-counter" data-target="100">0</span>%</h3>
+          <p style="font-size: 13px; color: #8fa8a0; margin-top: 4px;">Dedication</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills" class="section reveal">
+    <div class="skills-header-flex">
+      <h2 class="section-title" style="margin-bottom: 0;">Technical Skills</h2>
+    </div>
+
+    <div class="skills-outer-container">
+      <button id="slideLeft" class="side-arrow-btn left-arrow" aria-label="Scroll Left"><i class="fa-solid fa-chevron-left"></i></button>
+      
+      <div class="skills-carousel-wrapper" id="skillsWrapper">
+        <div class="skills-track" id="skillsTrack">
+          <!-- Languages -->
+          <div class="skill-card"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+          <div class="skill-card"><i class="fa-brands fa-python"></i><span>Python</span></div>
+          <div class="skill-card"><i class="fa-solid fa-code"></i><span>C++</span></div>
+          
+          <!-- Frontend -->
+          <div class="skill-card"><i class="fa-brands fa-react"></i><span>React & Next.js</span></div>
+          <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><span>Tailwind CSS</span></div>
+          <div class="skill-card"><i class="fa-brands fa-html5"></i><span>HTML5 / CSS3</span></div>
+          <div class="skill-card"><i class="fa-solid fa-mobile-screen"></i><span>Responsive Design</span></div>
+
+          <!-- Backend -->
+          <div class="skill-card"><i class="fa-solid fa-bolt"></i><span>FastAPI</span></div>
+          <div class="skill-card"><i class="fa-solid fa-network-wired"></i><span>REST API Design</span></div>
+          <div class="skill-card"><i class="fa-solid fa-database"></i><span>SQLAlchemy ORM</span></div>
+          <div class="skill-card"><i class="fa-solid fa-key"></i><span>JWT Authentication</span></div>
+
+          <!-- Databases -->
+          <div class="skill-card"><i class="fa-solid fa-server"></i><span>PostgreSQL</span></div>
+          <div class="skill-card"><i class="fa-solid fa-brain"></i><span>ChromaDB (Vector DB)</span></div>
+          <div class="skill-card"><i class="fa-solid fa-sitemap"></i><span>Data Modeling</span></div>
+
+          <!-- Tools -->
+          <div class="skill-card"><i class="fa-brands fa-git-alt"></i><span>Git / GitHub</span></div>
+          <div class="skill-card"><i class="fa-solid fa-paper-plane"></i><span>Postman</span></div>
+        </div>
+      </div>
+
+      <button id="slideRight" class="side-arrow-btn right-arrow" aria-label="Scroll Right"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section reveal">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      
+      <!-- Project 1: CareerCure -->
+      <div class="project-card reveal">
+        <h3>CareerCure — AI Career Counseling</h3>
+        <p>An intelligent web platform designed to provide personalized career recommendations using AI technology.</p>
+        <div class="tech-tags">
+          <span>React</span> <span>FastAPI</span> <span>ChromaDB</span>
+        </div>
+        <a href="https://github.com/Emaankhaliq/final-year-project" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <!-- Project 2: TaskFlow -->
+      <div class="project-card reveal">
+        <h3>TaskFlow — Full-Stack Task Manager</h3>
+        <p>A secure task management web app featuring user authentication, CRUD operations, and personalized task tracking.</p>
+        <div class="tech-tags">
+          <span>FastAPI</span> <span>Next.js</span> <span>Tailwind</span>
+        </div>
+        <a href="https://github.com/Emaankhaliq/taskflow" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <!-- Project 3: AI Resume Assistant -->
+      <div class="project-card reveal">
+        <h3>Career AI Resume Assistant</h3>
+        <p>AI-powered resume and career assistant with ATS analysis, job matching, skills gap analysis, and career roadmap.</p>
+        <div class="tech-tags">
+          <span>Python</span> <span>AI/LLM</span> <span>HTML/CSS</span>
+        </div>
+        <a href="https://github.com/Emaankhaliq/career-ai-resume-assistant" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <!-- Project 4: Inventory Management System -->
+      <div class="project-card reveal">
+        <h3>Inventory Management System</h3>
+        <p>A C++ desktop application built with persistent file storage and optimized data structures for inventory tracking.</p>
+        <div class="tech-tags">
+          <span>C++</span> <span>OOP</span> <span>File Handling</span>
+        </div>
+        <a href="https://github.com/Emaankhaliq/inventory-management-system" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <!-- Project 5: Smart Pill Manager -->
+      <div class="project-card reveal">
+        <h3>Smart Pill Manager</h3>
+        <p>An IoT-based automated pill dispenser system paired with a mobile app for automated dosage tracking.</p>
+        <div class="tech-tags">
+          <span>IoT</span> <span>Arduino</span> <span>Android</span>
+        </div>
+        <a href="https://github.com/Emaankhaliq/smart-pill-manager" target="_blank" class="project-link">View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+
+      <!-- Project 6: Foodpanda Application -->
+      <div class="project-card reveal">
+        <h3>Foodpanda Application</h3>
+        <p>A console-based food ordering system managing restaurant listings, order processing, and file-based history.</p>
+        <div class="tech-tags">
+          <span>C++</span> <span>Logic Building</span> <span>File Handling</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section reveal">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i> 
+          <a href="mailto:emanabdulkhaliq52@gmail.com" style="color: #ffffff; text-decoration: none;">emanabdulkhaliq52@gmail.com</a>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i> 
+          <a href="tel:+923471140455" style="color: #ffffff; text-decoration: none;">+92 3471140455</a>
+        </div>
+      </div>
+
+      <!-- Working Contact Form -->
+      <form id="contact-form" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit" id="submit-btn" class="btn-primary">Send Message</button>
+        <p id="form-status" style="margin-top: 12px; font-weight: 500; display: none;"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Copyright &copy; 2026 Eman Khaliq. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // 1. Mouse Tracking for Canvas & Hero
+    let mouse = { x: null, y: null, radius: 150 };
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+    window.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    // 2. Interactive Canvas Particle Background
+    const canvas = document.getElementById('particle-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.vx = (Math.random() - 0.5) * 0.7;
+          this.vy = (Math.random() - 0.5) * 0.7;
+          this.radius = Math.random() * 2 + 1;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(110, 231, 183, 0.6)';
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < 55; i++) {
+        particles.push(new Particle());
+      }
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+
+          // Connect particles
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < 130) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(110, 231, 183, ${0.22 * (1 - dist / 130)})`;
+              ctx.lineWidth = 0.8;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+
+          // Connect to mouse
+          if (mouse.x !== null && mouse.y !== null) {
+            const mdx = particles[i].x - mouse.x;
+            const mdy = particles[i].y - mouse.y;
+            const mDist = Math.hypot(mdx, mdy);
+            if (mDist < mouse.radius) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(110, 231, 183, ${0.35 * (1 - mDist / mouse.radius)})`;
+              ctx.lineWidth = 1;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(animateParticles);
+      }
+      animateParticles();
+    }
+
+    // 3. Magnetic Float on Hero Image
+    const heroWrapper = document.getElementById('heroImageWrapper');
+    const imageCircle = document.getElementById('imageCircle');
+    const expCard = document.getElementById('expCard');
+
+    if (heroWrapper && window.innerWidth > 992) {
+      heroWrapper.addEventListener('mousemove', (e) => {
+        const rect = heroWrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        if (imageCircle) imageCircle.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px)`;
+        if (expCard) expCard.style.transform = `translate(${x * 0.16}px, ${y * 0.16}px)`;
+      });
+
+      heroWrapper.addEventListener('mouseleave', () => {
+        if (imageCircle) imageCircle.style.transform = `translate(0, 0)`;
+        if (expCard) expCard.style.transform = `translate(0, 0)`;
+      });
+    }
+
+    // 4. Custom Cursor (Desktop Only)
+    if (window.innerWidth > 992) {
+      const cursor = document.createElement('div');
+      cursor.className = 'custom-cursor';
+      const dot = document.createElement('div');
+      dot.className = 'cursor-dot';
+      document.body.appendChild(cursor);
+      document.body.appendChild(dot);
+
+      window.addEventListener('mousemove', (e) => {
+        dot.style.left = `${e.clientX}px`;
+        dot.style.top = `${e.clientY}px`;
+        cursor.animate({
+          left: `${e.clientX}px`,
+          top: `${e.clientY}px`
+        }, { duration: 250, fill: "forwards" });
+      });
+
+      document.querySelectorAll('a, button, input, textarea, .skill-card, .project-card').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+      });
+    }
+
+    // 5. Dynamic Typewriter Effect
+    const words = [
+      "AI + Web Solutions",
+      "FastAPI & React Architectures",
+      "Full Stack Applications",
+      "Modern Web Experiences"
+    ];
+    let wordIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    const typingTarget = document.getElementById("typing-text");
+
+    function typeEffect() {
+      if (!typingTarget) return;
+      const currentWord = words[wordIdx];
+
+      if (isDeleting) {
+        typingTarget.textContent = currentWord.substring(0, charIdx - 1);
+        charIdx--;
+      } else {
+        typingTarget.textContent = currentWord.substring(0, charIdx + 1);
+        charIdx++;
+      }
+
+      let speed = isDeleting ? 45 : 90;
+
+      if (!isDeleting && charIdx === currentWord.length) {
+        speed = 1800;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        wordIdx = (wordIdx + 1) % words.length;
+        speed = 350;
+      }
+
+      setTimeout(typeEffect, speed);
+    }
+    typeEffect();
+
+    // 6. Scroll Reveal & Animated Number Counters
+    let statsCounted = false;
+    function runCounters() {
+      if (statsCounted) return;
+      statsCounted = true;
+      document.querySelectorAll('.stat-counter').forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const speed = target / 35;
+        const update = () => {
+          count += speed;
+          if (count < target) {
+            counter.innerText = Math.ceil(count);
+            setTimeout(update, 30);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        update();
+      });
+    }
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          if (entry.target.id === "about") {
+            runCounters();
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+    // 7. 3D Project Card Hover
+    if (window.innerWidth > 992) {
+      document.querySelectorAll(".project-card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const xRot = -((y - rect.height / 2) / (rect.height / 2)) * 10;
+          const yRot = ((x - rect.width / 2) / (rect.width / 2)) * 10;
+
+          card.style.transform = `perspective(1000px) rotateX(${xRot}deg) rotateY(${yRot}deg) translateY(-4px)`;
+          card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(110, 231, 183, 0.08) 0%, rgba(255, 255, 255, 0.03) 70%)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+          card.style.background = "rgba(255, 255, 255, 0.03)";
+        });
+      });
+    }
+
+    // 8. Sticky Navbar & Active Link Highlight
+    const navbar = document.querySelector('.navbar');
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      let scrollY = window.pageYOffset;
+
+      if (scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      sections.forEach((section) => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 120;
+        const sectionId = section.getAttribute("id");
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach((link) => {
+            link.classList.remove("active-link");
+            if (link.getAttribute("href") === `#${sectionId}`) {
+              link.classList.add("active-link");
+            }
+          });
+        }
+      });
+    });
+
+    // 9. Skills Continuous Auto-Marquee
+    const slider = document.getElementById('skillsWrapper');
+    const leftBtn = document.getElementById('slideLeft');
+    const rightBtn = document.getElementById('slideRight');
+    let isHoveringSkills = false;
+
+    function autoScrollSkills() {
+      if (!isHoveringSkills && slider) {
+        slider.scrollLeft += 0.8;
+        if (slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth - 2)) {
+          slider.scrollLeft = 0;
+        }
+      }
+      requestAnimationFrame(autoScrollSkills);
+    }
+    requestAnimationFrame(autoScrollSkills);
+
+    slider.addEventListener('mouseenter', () => { isHoveringSkills = true; });
+    slider.addEventListener('mouseleave', () => { isHoveringSkills = false; });
+    leftBtn.addEventListener('click', () => slider.scrollBy({ left: -300, behavior: 'smooth' }));
+    rightBtn.addEventListener('click', () => slider.scrollBy({ left: 300, behavior: 'smooth' }));
+
+    // 10. Working EmailJS Contact Form
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const status = document.getElementById('form-status');
+      
+      btn.innerText = 'Sending...';
+
+      emailjs.sendForm('service_uhb5mlp', 'template_ufdsfsj', this)
+        .then(() => {
+          btn.innerText = 'Send Message';
+          status.style.display = 'block';
+          status.style.color = '#4ade80';
+          status.innerText = 'Message Sent Successfully!';
+          this.reset();
+          setTimeout(() => { status.style.display = 'none'; }, 4000);
+        }, (error) => {
+          btn.innerText = 'Send Message';
+          status.style.display = 'block';
+          status.style.color = '#f87171';
+          status.innerText = 'Failed to send message. Please try again.';
+          console.error('EmailJS Error:', error);
+        });
+    });
+  </script>
+
+</body>
+</html>
